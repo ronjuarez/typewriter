@@ -1,4 +1,4 @@
-const sentence = "hello there from lighthouse labs";
+
 
 /*
 print the first character before the next and then display all of them together
@@ -16,6 +16,12 @@ it needs to happen at 0050ms intervals.
 I should expect my reduce function to create a new array and to have all the 
 char strings concatenated to it.
 */
-setTimeout ( () => { 
-  let type = (firstChar, secondChar) => firstChar + secondChar
-    process.stdout.write(sentence.reduce(type))}, 1000)
+const sentence = "hello there from lighthouse labs";
+
+/*
+if new is cur or greater than return new + cur every 0050s*/
+  for (const char in sentence) {
+    setTimeout(() => {
+    process.stdout.write(sentence[char]);
+}, 50 * char)
+} // <= 1s delay to make it noticeable. Can dial it down later.
